@@ -24,7 +24,13 @@ buttons.forEach((button) => {
                 // Play the selected sound
                 audio.currentTime = 0;
                 audio.play();
-                button.classList.add("playing");
+            button.classList.add("playing");
+            
+            document.getElementById("playBtn").addEventListener("click", () => {
+                    const audio = new Audio("sounds/forest.mp3");
+                    audio.play();
+            });
+
         });
 });
 

@@ -195,3 +195,49 @@ li button.playing {
     /* Pink hover */
     box-shadow:0 0 0px 0.5px #ff6585;
 }
+
+@media (max-width: 768px) {
+    .body {
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        gap: 16px;
+        height: auto;
+    }
+
+    .image {
+        flex: none;
+        max-height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image img {
+        width: 60%;
+        height: auto;
+        max-height: 180px;
+        object-fit: contain;
+    }
+
+    .menu {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        overflow-y: auto;
+    }
+
+    .menu>div {
+        padding: 12px;
+    }
+
+    .timer {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .bmcoffee {
+        font-size: 14px;
+        padding: 12px;
+    }
+}

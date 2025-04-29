@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         if (audio.readyState >= 3) {
                                 // 3: HAVE_FUTURE_DATA
                                 if (audio.paused) {
-                                        audio.currentTime = 0;
+                                    audio.currentTime = 0;
+                                    audio.loop = true;
                                         audio.play().catch((err) => {
                                                 console.error(
                                                         "Playback failed:",
@@ -28,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 console.log(
                                         `Audio ${id} is not ready. Trying to load...`
                                 );
-                                audio.load(); // Load the audio
+                            audio.load(); // Load the audio
                         }
                 });
         });

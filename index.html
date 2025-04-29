@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/telegraf" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Chillscape</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="/undraw_relaunch-day_k3qo.svg" alt="logo">
+        </div>
+        <div class="text">Chillscape</div>
+    </div>
+    <div class="body">
+        <div class="image">
+            <img src="/undraw_to-the-moon_w1wa.svg" alt="illustration">
+        </div>
+        <div class="menu">
+            <div class="music">
+                <div class="menu-header">Music</div>
+                <ul>
+                    <li><button data-sound="lofi">Lo-Fi</button></li>
+                    <li><button data-sound="piano">Piano</button></li>
+                    <li><button data-sound="rock">RocknRoll</button></li>
+                    <li><button data-sound="guitar">Acoustic Guitar</button></li>
+                </ul>
+            </div>
+            <div class="neighborhood">
+                <div class="menu-header">Neighborhood</div>
+                <ul>
+                    <li><button data-sound="traffic">Urban traffic</button></li>
+                    <li><button data-sound="smalltown">Small town</button></li>
+                    <li><button data-sound="office">Office</button></li>
+                    <li><button data-sound="nature">Nature</button></li>
+                </ul>
+            </div>
+            <div class="weather">
+                <div class="menu-header">Weather</div>
+                <ul>
+                    <li><button data-sound="rain">Rain</button></li>
+                    <li><button data-sound="thunder">Thunderstorm</button></li>
+                    <li><button data-sound="night">Stargazing</button></li>
+                </ul>
+            </div>
+            <div class="timer">
+                <div class="timer-header">Timer</div>
+                <ul class="timer-item">
+                    <li><div class="time" contenteditable="true">00:00</div></li>
+                    <li><button class="timer-button">Start</button></li>
+                </ul>
+            </div>
+            <a class="bmcoffee" href="https://buymeacoffee.com/phonemyintzaw" target="_blank">Buy me a coffee ☕ </a>
+        </div>
+    </div>
+    <script src="/app.js"></script>
+</body>
+    <audio id="lofi" src="sounds/lofi-sample-if-i-cant-have-you-330746.mp3"></audio>
+    <audio id="piano" src="sounds/afternoon-ambient-piano-solo-24367.mp3"></audio>
+    <audio id="rock" src="sounds/rock-music-6211.mp3"></audio>
+    <audio id="guitar" src="sounds/spanish-guitar-loop-17221.mp3"></audio>    
+    <audio id="traffic" src="sounds/city-intersection-301867.mp3"></audio>
+    <audio id="smalltown" src="sounds/small-town-garden-60521.mp3"></audio>
+    <audio id="office" src="sounds/office-ambience-6322.mp3"></audio>
+    <audio id="nature" src="sounds/birds-singing-calm-river-nature-ambient-sound-127411.mp3"></audio>    
+    <audio id="rain" src="sounds/rain-sound-188158.mp3"></audio>
+    <audio id="thunder" src="sounds/thunderstorm-with-heavy-rain1wav-14586.mp3"></audio>
+    <audio id="night" src="sounds/night-sky-sound-effect-02-321718.mp3"></audio>
+    <!-- Add more for each sound (urban, town, office, etc.) -->
+</html>

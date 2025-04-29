@@ -1,0 +1,197 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Telegraf', sans-serif;
+}
+
+/* Background */
+body {
+    background: linear-gradient(135deg, #0f172a, #3b0764);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #ffffff;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px 40px 10px 40px;
+    /* more padding-top, less padding-bottom */
+    background: transparent;
+    /* no background color */
+    box-shadow: none;
+    /* no shadow */
+}
+
+.logo img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.text {
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 10px;
+    color: #ffffff;
+    letter-spacing: 0.8px;
+}
+
+/* Main Body */
+.body {
+    display: flex;
+    flex: 1;
+    padding: 30px;
+    gap: 30px;
+}
+
+/* Illustration Section */
+.image {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img {
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Menu Section */
+.menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.menu>div {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 16px;
+    border-radius: 12px;
+    backdrop-filter: blur(12px);
+    /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); */
+    transition: 0.3s ease;
+}
+
+
+/* Section Title */
+.menu-header {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+}
+
+/* Button List */
+ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+li button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+li button:hover {
+    color: #ff6585;
+}
+
+li button.playing {
+    background-color: #ff6585;
+    color: #fff;
+}
+
+/* Timer Block Styled Like Menu Items */
+/* Timer Container */
+.timer {
+    display: grid;
+    grid-template-columns: auto auto;
+    /* prevent stretching */
+    gap: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s ease;
+}
+
+.timer-header{
+    font-size: 18px;
+    font-weight: 600;
+    color: #e0e0e0;}
+
+/* Editable Time Box Styled Like a Button */
+.time {
+    width: 80px;
+    /* fixed width for MM:SS */
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    color: #ff6585;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: text;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.timer-button {
+    min-width: 80px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    font-family: 'Telegraf';
+}
+
+.timer-button:hover{
+    background-color: #ff6585;
+    color: #fff;
+}
+
+.bmcoffee {
+    display: block;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #ffffff;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    width: 100%;
+}
+
+.bmcoffee:hover {
+    /* Pink hover */
+    box-shadow:0 0 0px 0.5px #ff6585;
+}

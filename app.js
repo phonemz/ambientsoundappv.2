@@ -1,4 +1,3 @@
-// --- SOUND BUTTONS LOGIC ---
 const buttons = document.querySelectorAll("button[data-sound]");
 const audios = document.querySelectorAll("audio");
 
@@ -7,42 +6,38 @@ buttons.forEach((button) => {
                 const id = button.getAttribute("data-sound");
                 const audio = document.getElementById(id);
 
-                // If the selected audio is already playing, pause it
-                if (!audio.paused) {
+                // Pause all others
+                audios.forEach((a) => {
+                        if (a !== audio) {
+                                a.pause();
+                                a.currentTime = 0;
+                        }
+                });
+
+                // Toggle current audio
+                if (audio.paused) {
+                        audio.currentTime = 0;
+                        audio.play().catch((err) =>
+                                console.error("Playback failed:", err)
+                        );
+                        buttons.forEach((btn) =>
+                                btn.classList.remove("playing")
+                        );
+                        button.classList.add("playing");
+                } else {
                         audio.pause();
                         button.classList.remove("playing");
-                        return;
                 }
-
-                // Pause all other sounds and remove their active state
-                audios.forEach((a) => {
-                        a.pause();
-                        a.currentTime = 0;
-                });
-                buttons.forEach((btn) => btn.classList.remove("playing"));
-
-                // Play the selected sound
-                audio.currentTime = 0;
-                audio.play();
-            button.classList.add("playing");
-            
-            document.getElementById("playBtn").addEventListener("click", () => {
-                    const audio = new Audio("sounds/forest.mp3");
-                    audio.play();
-            });
-
         });
 });
 
 // --- TIMER LOGIC ---
 let timerInterval = null;
 
-// Handle timer start
 document.querySelector(".timer-button").addEventListener("click", () => {
         const timeDisplay = document.querySelector(".time");
         let [minutes, seconds] = timeDisplay.textContent.split(":").map(Number);
 
-        // Prevent multiple intervals
         clearInterval(timerInterval);
 
         let totalSeconds = minutes * 60 + seconds;
@@ -54,17 +49,14 @@ document.querySelector(".timer-button").addEventListener("click", () => {
                         clearInterval(timerInterval);
                         timeDisplay.textContent = "00:00";
 
-                        // Stop all playing audio
-                        document.querySelectorAll("audio").forEach((audio) => {
+                        // Stop all audio
+                        audios.forEach((audio) => {
                                 audio.pause();
                                 audio.currentTime = 0;
                         });
-
-                        // Reset button highlight
-                        document.querySelectorAll("button[data-sound]").forEach(
-                                (btn) => btn.classList.remove("playing")
+                        buttons.forEach((btn) =>
+                                btn.classList.remove("playing")
                         );
-
                         return;
                 }
 
@@ -77,5 +69,3 @@ document.querySelector(".timer-button").addEventListener("click", () => {
                 timeDisplay.textContent = `${min}:${sec}`;
         }, 1000);
 });
-
-
